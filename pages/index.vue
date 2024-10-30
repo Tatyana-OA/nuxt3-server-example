@@ -1,19 +1,10 @@
 <script setup>
-const { data: scizor } = await useFetch(
-  "https://pokeapi.co/api/v2/pokemon/scizor"
-);
+const { data: scizor } = await useFetch("/api/scizor");
 </script>
-
 <template>
   <ul>
-    <li><img :src="scizor.sprites.front_default" alt="pokeImage" /></li>
+    <li><img :src="scizor.sprite" alt="sprite" /></li>
     <li>Pokemon ID: {{ scizor.id }}</li>
     <li>Pokemon Name: {{ scizor.name }}</li>
-    <li>Pokemon Types: {{ scizor.types }}</li>
   </ul>
-  <div>
-    <pre>
-      {{ scizor }}
-    </pre>
-  </div>
 </template>
